@@ -15,4 +15,4 @@ Sprint 2 — Core Platform Development
 ## Team
 - Team Lead: Mahalakshmi
 - Backend Lead: Rithik
-- Frontend Lead: Monishaaa
+- Frontend Lead: Monishaa
