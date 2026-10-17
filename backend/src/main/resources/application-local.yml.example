@@ -1,0 +1,27 @@
+# Local-only profile: run without Docker/PostgreSQL.
+# 1. Copy this file to application-local.yml (that copy is git-ignored, never commit it).
+# 2. Replace every CHANGE_ME value.
+# 3. Start with:  APP_ENV=local  and  ./mvnw spring-boot:run -Plocal
+spring:
+  datasource:
+    url: jdbc:h2:file:./data/reviewai;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  flyway:
+    enabled: false
+
+app:
+  jwt:
+    secret: CHANGE_ME_BASE64_AT_LEAST_32_BYTES
+  security:
+    encryption-key: CHANGE_ME_BASE64
+    bcrypt-strength: 4
+  bootstrap:
+    super-admin:
+      email: CHANGE_ME_ADMIN_EMAIL
+      password: CHANGE_ME_LONG_PASSWORD_12_CHARS_MIN
