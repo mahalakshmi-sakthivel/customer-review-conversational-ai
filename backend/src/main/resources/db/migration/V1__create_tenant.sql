@@ -1,0 +1,8 @@
+CREATE TABLE tenant (
+  id UUID PRIMARY KEY,
+  name VARCHAR(150) NOT NULL UNIQUE,
+  status VARCHAR(20) NOT NULL DEFAULT 'ACTIVE',
+  evolution_instance_name VARCHAR(100) UNIQUE,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
